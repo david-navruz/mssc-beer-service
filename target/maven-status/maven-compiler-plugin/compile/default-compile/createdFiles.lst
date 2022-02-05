@@ -1,0 +1,13 @@
+com\udemy\msscbrewery\web\model\CustomerDto$CustomerDtoBuilder.class
+com\udemy\msscbrewery\web\service\CustomerService.class
+com\udemy\msscbrewery\web\service\CustomerServiceImpl.class
+com\udemy\msscbrewery\web\model\BeerDto$BeerDtoBuilder.class
+com\udemy\msscbrewery\web\model\CustomerDto.class
+com\udemy\msscbrewery\web\service\BeerServiceImpl.class
+com\udemy\msscbrewery\web\model\BeerStyleEnum.class
+com\udemy\msscbrewery\MsscBreweryApplication.class
+com\udemy\msscbrewery\web\controller\CustomerController.class
+com\udemy\msscbrewery\web\controller\BeerController.class
+com\udemy\msscbrewery\web\model\BeerDto.class
+com\udemy\msscbrewery\web\model\BeerPagedList.class
+com\udemy\msscbrewery\web\service\BeerService.class

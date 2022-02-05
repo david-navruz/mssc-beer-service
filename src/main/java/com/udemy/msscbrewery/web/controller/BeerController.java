@@ -14,7 +14,8 @@ import java.util.UUID;
 @RestController
 public class BeerController {
 
-    private final BeerService beerService;
+
+    private BeerService beerService;
 
     @Autowired
     public BeerController(BeerService beerService) {
@@ -26,8 +27,8 @@ public class BeerController {
         return new ResponseEntity<BeerDto>(beerService.getBeerById(beerId), HttpStatus.OK);
     }
 
-    @PostMapping // POST - create new beer
-    public ResponseEntity handlePost(BeerDto beerDto){
+    @PostMapping
+    public ResponseEntity saveNewBeer(@RequestBody BeerDto beerDto){
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
         HttpHeaders headers = new HttpHeaders();
         //todo add hostname to url
@@ -36,7 +37,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, BeerDto beerDto){
+    public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto){
         beerService.updateBeer(beerId, beerDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
 
