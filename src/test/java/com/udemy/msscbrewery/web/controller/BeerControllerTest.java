@@ -2,6 +2,7 @@ package com.udemy.msscbrewery.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.udemy.msscbrewery.web.model.BeerDto;
+import com.udemy.msscbrewery.web.model.BeerStyleEnum;
 import com.udemy.msscbrewery.web.service.BeerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,7 +41,7 @@ class BeerControllerTest {
 
     @Test
     void saveNewBeer() throws Exception {
-        BeerDto beerDto = BeerDto.builder().build();
+        BeerDto beerDto = beerService.getBeerById(UUID.randomUUID());
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/beer/")

@@ -33,6 +33,15 @@ public class BeerServiceImpl implements BeerService {
 
     }
 
+    @Override
+    public void deleteById(UUID beerId) {
+
+    }
+
+    @Override
+    public BeerDto findBeerByUpc(String upc) {
+        return null;
+    }
 
 
 }
