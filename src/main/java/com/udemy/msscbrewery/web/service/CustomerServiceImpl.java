@@ -15,4 +15,20 @@ public class CustomerServiceImpl implements CustomerService {
                                     .customerName("Clarke")
                                     .build();
     }
+
+    @Override
+    public CustomerDto saveNewCustomer(CustomerDto customerDto) {
+        return CustomerDto.builder().id(UUID.randomUUID()).build();
+    }
+
+    @Override
+    public void updateCustomer(UUID customerId, CustomerDto customerDto) {
+        //todo impl
+
+    }
+
+    @Override
+    public void deleteById(UUID customerId) {
+        //todo impl
+    }
 }
