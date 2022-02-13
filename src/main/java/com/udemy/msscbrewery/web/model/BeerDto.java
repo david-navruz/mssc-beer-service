@@ -1,5 +1,7 @@
 package com.udemy.msscbrewery.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,16 +22,17 @@ import java.util.UUID;
 @Builder
 public class BeerDto implements Serializable {
 
+    @JsonProperty("beerId")
     @Null
     private UUID id;
 
     @Null
     private Integer version;
 
-    @Null
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
     private OffsetDateTime createdDate;
 
-    @Null
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
     private OffsetDateTime lastModifiedDate;
 
     @NotBlank
@@ -38,10 +41,10 @@ public class BeerDto implements Serializable {
     @NotBlank
     private BeerStyleEnum beerStyle;
 
-    @Positive
     @NotNull
-    private Long upc;
+    private String upc;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     @Positive
     @NotNull
     private BigDecimal price;

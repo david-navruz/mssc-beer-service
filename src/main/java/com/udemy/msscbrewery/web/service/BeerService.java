@@ -1,18 +1,22 @@
 package com.udemy.msscbrewery.web.service;
 
 import com.udemy.msscbrewery.web.model.BeerDto;
+import com.udemy.msscbrewery.web.model.BeerPagedList;
+import com.udemy.msscbrewery.web.model.BeerStyleEnum;
+import org.springframework.data.domain.PageRequest;
+
 import java.util.UUID;
 
 public interface BeerService {
 
-    public BeerDto getBeerById(UUID beerId);
+    BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand);
 
-    public BeerDto saveNewBeer(BeerDto beerDto);
+    BeerDto getById(UUID beerId, Boolean showInventoryOnHand);
 
-    public void updateBeer(UUID beerId, BeerDto beerDto);
+    BeerDto saveNewBeer(BeerDto beerDto);
 
-    void deleteById(UUID beerId);
+    BeerDto updateBeer(UUID beerId, BeerDto beerDto);
 
-    BeerDto findBeerByUpc(String upc);
+    BeerDto getByUpc(String upc);
 
 }
